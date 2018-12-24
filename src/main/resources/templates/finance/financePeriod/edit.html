@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+</head>
+<body>
+
+	<div class="layui-fluid ping-erp-edit-content-div">
+		<form class="layui-form layui-form-pane" action="">
+			<input name="periodId" type="hidden" th:value="${financePeriod?.periodId}" />
+			
+			<div class="layui-form-item">
+				<label class="layui-form-label">公司ID</label>
+				<div class="layui-input-inline">
+					<input name="companyId" type="text" class="layui-input" placeholder="公司ID" th:value="${financePeriod?.companyId}" autocomplete="off" lay-verify="required" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">初始时间</label>
+				<div class="layui-input-inline">
+					<input name="initialTime" type="text" class="layui-input" placeholder="初始时间" th:value="${financePeriod?.initialTime}" autocomplete="off" lay-verify="required" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">结账时间</label>
+				<div class="layui-input-inline">
+					<input name="archivedTime" type="text" class="layui-input" placeholder="结账时间" th:value="${financePeriod?.archivedTime}" autocomplete="off" lay-verify="required" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">是否结账</label>
+				<div class="layui-input-inline">
+					<input name="isArchived" type="text" class="layui-input" placeholder="是否结账" th:value="${financePeriod?.isArchived}" autocomplete="off" lay-verify="required" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">创建时间</label>
+				<div class="layui-input-inline">
+					<input name="createTime" type="text" class="layui-input" placeholder="创建时间" th:value="${financePeriod?.createTime}" autocomplete="off" lay-verify="required" />
+				</div>
+			</div>
+			
+			<div class="layui-form-item ping-erp-edit-button-div">
+				<button type="button" class="layui-btn" id="finance-financePeriod-edit-btn-1" lay-filter="finance-financePeriod-edit-btn-1" lay-submit="">保存</button>
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>

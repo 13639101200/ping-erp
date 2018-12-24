@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+</head>
+<body>
+
+	<div class="layui-fluid ping-erp-edit-content-div">
+		<form class="layui-form layui-form-pane" action="">
+			<input name="subjectId" type="hidden" th:value="${templateSubject?.subjectId}" />
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">科目代码</label>
+				<div class="layui-input-inline ping-erp-edit-input-div-lastinput">
+					<input name="subjectCode" type="text" class="layui-input" placeholder="科目代码" th:value="${templateSubject?.subjectCode}" autocomplete="off" lay-verify="required|length20|intType" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">科目名称</label>
+				<div class="layui-input-inline ping-erp-edit-input-div-lastinput">
+					<input name="subjectName" type="text" class="layui-input" placeholder="科目名称" th:value="${templateSubject?.subjectName}" autocomplete="off" lay-verify="required|length20" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">科目类别</label>
+				<div class="layui-input-inline ping-erp-edit-input-div-lastinput">
+					<select name="subjectType.codeId">
+						<option th:each="data:${typeList}" th:value="${data.codeId}" th:text="${data.codeValue}" th:selected="${data.codeId==templateSubject?.subjectType?.codeId}?'selected'"></option>
+					</select>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">科目方向</label>
+				<div class="layui-input-inline ping-erp-edit-input-div-lastinput">
+					<select name="subjectDirection.codeId">
+						<option th:each="data:${directionList}" th:value="${data.codeId}" th:text="${data.codeValue}" th:selected="${data.codeId==templateSubject?.subjectDirection?.codeId}?'selected'"></option>
+					</select>
+				</div>
+			</div>
+
+			<div class="layui-form-item ping-erp-edit-button-div">
+				<button type="button" class="layui-btn" id="basedata-templateSubject-edit-btn-1" lay-filter="basedata-templateSubject-edit-btn-1" lay-submit="">保存</button>
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>

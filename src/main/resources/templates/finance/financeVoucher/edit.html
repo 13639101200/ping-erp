@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+</head>
+<body>
+
+	<div class="layui-fluid ping-erp-edit-content-div">
+		<form class="layui-form layui-form-pane" action="">
+			<input name="voucherId" type="hidden" th:value="${financeVoucher?.voucherId}" /> <input id="finance-financeVoucher-edit-param-1" th:if="${financeVoucher!=null}" type="hidden" th:value="${#lists.size(financeVoucher?.details)}" />
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">凭证字</label>
+				<div class="layui-input-inline layui-form" lay-filter="finance-financeVoucher-edit-input-2">
+					<select name="voucherWord.wordId">
+						<option th:each="data:${wordList}" th:value="${data.wordId}" th:text="${data.wordName}" th:selected="${data.wordId==financeVoucher?.voucherWord?.wordId}?'selected'"></option>
+					</select>
+				</div>
+				<label class="layui-form-label">凭证号</label>
+				<div class="layui-input-inline">
+					<input name="voucherNumber" type="text" class="layui-input" placeholder="凭证号" th:value="${financeVoucher?.voucherNumber}" autocomplete="off" lay-verify="required|intType" />
+				</div>
+				<label class="layui-form-label">制单日期</label>
+				<div class="layui-input-inline">
+					<input id="finance-financeVoucher-edit-input-1" name="voucherTime" type="text" class="layui-input" placeholder="制单日期" readonly="readonly" th:value="${financeVoucher?.voucherTime}?${#dates.format(financeVoucher?.voucherTime,'yyyy-MM-dd')}:${#dates.format(new java.util.Date().getTime(),'yyyy-MM-dd')}" autocomplete="off" lay-verify="required" />
+				</div>
+				<label class="layui-form-label">附件数</label>
+				<div class="layui-input-inline ping-erp-edit-input-div-lastinput">
+					<input name="accessoryNumber" type="text" class="layui-input" placeholder="附件数" th:value="${financeVoucher?.accessoryNumber}?${financeVoucher?.accessoryNumber}:0" autocomplete="off" lay-verify="required|intTypeZero" />
+				</div>
+			</div>
+
+			<fieldset class="layui-elem-field layui-field-title">
+				<legend>
+					<a>明细</a>
+				</legend>
+			</fieldset>
+
+			<div id="finance-financeVoucher-edit-div-1">
+				<div class="layui-form-item">
+					<label class="layui-form-label ping-erp-edit-detail-label">摘要</label> <label class="layui-form-label ping-erp-edit-detail-label">科目</label> <label class="layui-form-label ping-erp-edit-detail-label">借方金额</label> <label class="layui-form-label ping-erp-edit-detail-label">贷方金额</label> <label class="layui-form-label ping-erp-edit-detail-label">辅计数量</label> <label class="layui-form-label ping-erp-edit-detail-label-small">删除</label>
+				</div>
+				<div th:if="${financeVoucher==null}" class="layui-form-item">
+					<div class="layui-input-inline">
+						<input name="detailAbstract0" type="text" class="layui-input" autocomplete="off" lay-verify="required|length20" />
+					</div>
+					<div class="layui-input-inline">
+						<select id="finance-financeVoucher-edit-subjectId-0"></select>
+					</div>
+					<div class="layui-input-inline">
+						<input name="borrowerMoney0" type="text" class="layui-input" autocomplete="off" lay-verify="doubleType" />
+					</div>
+					<div class="layui-input-inline">
+						<input name="lenderMoney0" type="text" class="layui-input" autocomplete="off" lay-verify="doubleType" />
+					</div>
+					<div class="layui-input-inline">
+						<input name="assistAmount0" type="text" class="layui-input" autocomplete="off" lay-verify="doubleType" />
+					</div>
+					<div class="layui-col-sm1">
+						<button type="button" class="layui-btn layui-btn-danger" onclick="financeFinanceVoucherIndex.delDetailBtnOn(this,0);">
+							<i class="layui-icon layui-icon-close"></i>
+						</button>
+					</div>
+				</div>
+				<div th:if="${financeVoucher==null}" class="layui-form-item">
+					<div class="layui-input-inline">
+						<input name="detailAbstract1" type="text" class="layui-input" autocomplete="off" lay-verify="required|length20" />
+					</div>
+					<div class="layui-input-inline">
+						<select id="finance-financeVoucher-edit-subjectId-1"></select>
+					</div>
+					<div class="layui-input-inline">
+						<input name="borrowerMoney1" type="text" class="layui-input" autocomplete="off" lay-verify="doubleType" />
+					</div>
+					<div class="layui-input-inline">
+						<input name="lenderMoney1" type="text" class="layui-input" autocomplete="off" lay-verify="doubleType" />
+					</div>
+					<div class="layui-input-inline">
+						<input name="assistAmount1" type="text" class="layui-input" autocomplete="off" lay-verify="doubleType" />
+					</div>
+					<div class="layui-col-sm1">
+						<button type="button" class="layui-btn layui-btn-danger" onclick="financeFinanceVoucherIndex.delDetailBtnOn(this,1);">
+							<i class="layui-icon layui-icon-close"></i>
+						</button>
+					</div>
+				</div>
+				<div th:if="${financeVoucher!=null}" th:each="detail,status:${financeVoucher?.details}" class="layui-form-item">
+					<input th:name="'detailId'+${status.index}" th:value="${detail?.detailId}" type="hidden" />
+					<div class="layui-input-inline">
+						<input th:name="'detailAbstract'+${status.index}" th:value="${detail?.detailAbstract}" type="text" class="layui-input" autocomplete="off" lay-verify="required|length20" />
+					</div>
+					<div class="layui-input-inline">
+						<select th:id="'finance-financeVoucher-edit-subjectId-'+${status.index}">
+							<option th:value="${detail?.subject?.subjectId}" th:text="${detail?.subject?.subjectCode}+'-'+${detail?.subject?.subjectName}"></option>
+						</select>
+					</div>
+					<div class="layui-input-inline">
+						<input th:name="'borrowerMoney'+${status.index}" th:value="${detail?.borrowerMoney eq 0}?'':${#numbers.formatDecimal(detail?.borrowerMoney,1,'COMMA',2,'POINT')}" type="text" class="layui-input" autocomplete="off" lay-verify="doubleType" />
+					</div>
+					<div class="layui-input-inline">
+						<input th:name="'lenderMoney'+${status.index}" th:value="${detail?.lenderMoney eq 0}?'':${#numbers.formatDecimal(detail?.lenderMoney,1,'COMMA',2,'POINT')}" type="text" class="layui-input" autocomplete="off" lay-verify="doubleType" />
+					</div>
+					<div class="layui-input-inline">
+						<input th:name="'assistAmount'+${status.index}" th:value="${detail?.assistAmount eq 0}?'':${#numbers.formatDecimal(detail?.assistAmount,1,'COMMA',2,'POINT')}" type="text" class="layui-input" autocomplete="off" lay-verify="doubleType" />
+					</div>
+					<div class="layui-col-sm1">
+						<button type="button" class="layui-btn layui-btn-danger" th:onclick="'financeFinanceVoucherIndex.delDetailBtnOn(this,'+${status.index}+');'">
+							<i class="layui-icon layui-icon-close"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="layui-form-item ping-erp-edit-button-div">
+				<button type="button" class="layui-btn layui-btn-warm" id="finance-financeVoucher-edit-btn-2">增加</button>
+				<button type="button" class="layui-btn" id="finance-financeVoucher-edit-btn-1" lay-filter="finance-financeVoucher-edit-btn-1" lay-submit="">保存</button>
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>ERP企业管理系统</title>
+<link rel="icon" th:href="@{/ico/system-title.ico}" type="img/x-ico" />
+<link rel="stylesheet" th:href="@{/layui-2.4.5/css/layui.css}" />
+<link rel="stylesheet" th:href="@{/zTree-3.5.33/css/zTreeStyle/zTreeStyle.css}" />
+<link rel="stylesheet" th:href="@{/css/common/common.css}" />
+<link rel="stylesheet" th:href="@{/css/common/common/page.css}" />
+</head>
+<body>
+	<input id="common-login-page-url-1" type="hidden" th:value="${url}" />
+	<div id="common-login-page-div-1"></div>
+
+	<script th:src="@{/jquery-1.12.4/jquery.min.js}"></script>
+	<script th:src="@{/uuid-1.4/uuid.js}"></script>
+	<script th:src="@{/layui-2.4.5/layui.all.js}"></script>
+	<script th:src="@{/zTree-3.5.33/js/jquery.ztree.all.min.js}"></script>
+	<script th:src="@{/js/common/common.js}"></script>
+	<script th:src="@{/js/common/common/page.js}"></script>
+</body>
+</html>

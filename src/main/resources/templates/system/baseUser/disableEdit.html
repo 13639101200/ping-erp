@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+</head>
+<body>
+
+	<div class="layui-fluid ping-erp-edit-content-div">
+		<form class="layui-form layui-form-pane" action="">
+			<div class="layui-form-item">
+				<label class="layui-form-label">当前状态</label>
+				<div class="layui-input-inline ping-erp-edit-input-div-lastinput">
+					<input th:if="${userLogin==null}" type="text" class="layui-input" value="无账号" readonly="readonly" /> <input th:if="${userLogin!=null and userLogin.enable}" type="text" class="layui-input" value="已启用" readonly="readonly" /> <input th:if="${userLogin!=null and !userLogin.enable}" type="text" class="layui-input" value="已禁用" readonly="readonly" />
+				</div>
+			</div>
+
+			<div class="layui-form-item ping-erp-edit-button-div">
+				<button th:if="${userLogin==null}" type="button" class="layui-btn" onclick="systemBaseUserIndex.disableEditWindowClose()">确定</button>
+				<button th:if="${userLogin!=null and userLogin.enable}" type="button" class="layui-btn" th:onclick="'systemBaseUserIndex.disableSaveBtnOn(\''+${userLogin.userId}+'\')'">禁用</button>
+				<button th:if="${userLogin!=null and !userLogin.enable}" type="button" class="layui-btn" th:onclick="'systemBaseUserIndex.disableSaveBtnOn(\''+${userLogin.userId}+'\')'">启用</button>
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+</head>
+<body>
+
+	<div class="layui-fluid layui-form-pane ping-erp-detail-content-div">
+		<div class="layui-form-item">
+			<label class="layui-form-label">凭证字</label>
+			<div class="layui-input-inline">
+				<input type="text" class="layui-input" th:value="${voucher?.voucherWord?.wordName}" disabled="disabled" />
+			</div>
+			<label class="layui-form-label">凭证号</label>
+			<div class="layui-input-inline">
+				<input type="text" class="layui-input" th:value="${voucher?.voucherNumber}" disabled="disabled" />
+			</div>
+			<label class="layui-form-label">制单日期</label>
+			<div class="layui-input-inline ping-erp-detail-input-div-lastinput">
+				<input type="text" class="layui-input" th:value="${#dates.format(voucher?.voucherTime,'yyyy-MM-dd')}" disabled="disabled" />
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">凭证金额</label>
+			<div class="layui-input-inline">
+				<input type="text" class="layui-input" th:value="${#numbers.formatDecimal(voucherMoney,1,'COMMA',2,'POINT')}" disabled="disabled" />
+			</div>
+			<label class="layui-form-label">附件数</label>
+			<div class="layui-input-inline">
+				<input type="text" class="layui-input" th:value="${voucher?.accessoryNumber}" disabled="disabled" />
+			</div>
+			<label class="layui-form-label">制单人</label>
+			<div class="layui-input-inline ping-erp-detail-input-div-lastinput">
+				<input type="text" class="layui-input" th:value="${voucher?.fillUser?.userName}" disabled="disabled" />
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">签字人</label>
+			<div class="layui-input-inline">
+				<input type="text" class="layui-input" th:value="${voucher?.signatureUser?.userName}" disabled="disabled" />
+			</div>
+			<label class="layui-form-label">审核人</label>
+			<div class="layui-input-inline">
+				<input type="text" class="layui-input" th:value="${voucher?.auditUser?.userName}" disabled="disabled" />
+			</div>
+			<label class="layui-form-label">记账人</label>
+			<div class="layui-input-inline ping-erp-detail-input-div-lastinput">
+				<input type="text" class="layui-input" th:value="${voucher?.accountUser?.userName}" disabled="disabled" />
+			</div>
+		</div>
+		<table class="layui-table">
+			<colgroup>
+				<col width="200" />
+				<col width="200" />
+				<col width="150" />
+				<col width="150" />
+				<col width="150" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th>摘要</th>
+					<th>科目</th>
+					<th>借方金额</th>
+					<th>贷方金额</th>
+					<th>辅计数量</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="detail:${voucher?.details}">
+					<td th:text="${detail?.detailAbstract}"></td>
+					<td th:text="${detail?.subject?.subjectCode}+'-'+${detail?.subject?.subjectName}"></td>
+					<td th:text="${detail?.borrowerMoney eq 0}?'':${#numbers.formatDecimal(detail?.borrowerMoney,1,'COMMA',2,'POINT')}"></td>
+					<td th:text="${detail?.lenderMoney eq 0}?'':${#numbers.formatDecimal(detail?.lenderMoney,1,'COMMA',2,'POINT')}"></td>
+					<td th:text="${detail?.assistAmount eq 0}?'':${#numbers.formatDecimal(detail?.assistAmount,1,'COMMA',2,'POINT')}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>

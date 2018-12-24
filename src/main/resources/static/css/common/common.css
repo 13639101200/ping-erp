@@ -1,0 +1,58 @@
+.ping-erp-index-content-div {
+	padding: 10px;
+}
+
+.ping-erp-edit-content-div {
+	padding: 15px;
+}
+
+.ping-erp-edit-input-div-lastinput {
+	margin-right: 0 !important;
+}
+
+.ping-erp-edit-input-div-mediuminput {
+	width: 499px !important;
+}
+
+.ping-erp-edit-input-div-biggestinput {
+	width: 100% !important;
+}
+
+.ping-erp-edit-tree-ul {
+	width: 300px;
+	height: 350px;
+	padding: 0;
+}
+
+.ping-erp-edit-detail-label {
+	width: 190px !important;
+	margin: 0 10px 0 -1px;
+}
+
+.ping-erp-edit-detail-label-small {
+	width: 60px !important;
+	margin: 0 10px 0 -1px;
+}
+
+.ping-erp-edit-button-div {
+	text-align: center;
+	margin: 0;
+}
+
+.ping-erp-detail-content-div {
+	padding: 15px;
+}
+
+.ping-erp-detail-input-div-lastinput {
+	margin-right: 0 !important;
+}
+
+.ping-erp-btn-group-right {
+	float: right;
+}
+
+.ping-erp-btn-group-first-btn-disabled,
+	.ping-erp-btn-group-first-btn-disabled:active,
+	.ping-erp-btn-group-first-btn-disabled:hover {
+	border: 1px solid #e6e6e6 !important;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=devic-width, initial-scale=1, maximum-scale=1" />
+</head>
+<body>
+
+	<div class="ping-erp-index-content-div">
+		<div class="layui-btn-group">
+			<button id="system-baseCode-index-btn-1" class="layui-btn">增加</button>
+			<button id="system-baseCode-index-btn-2" class="layui-btn">编辑</button>
+			<button id="system-baseCode-index-btn-3" class="layui-btn">删除</button>
+		</div>
+
+		<div class="layui-inline">
+			<input id="system-baseCode-index-key-1" type="text" class="layui-input" placeholder="代码丨类型丨码值" autocomplete="off" />
+		</div>
+		<button id="system-baseCode-index-btn-4" class="layui-btn">搜索</button>
+
+		<table id="system-baseCode-index-table-1" lay-filter="system-baseCode-index-table-1"></table>
+	</div>
+
+	<script th:src="@{/js/system/baseCode/index.js}"></script>
+
+</body>
+</html>

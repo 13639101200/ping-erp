@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+</head>
+<body>
+
+	<div class="layui-fluid ping-erp-edit-content-div">
+		<form class="layui-form layui-form-pane" action="">
+			<input name="departmentId" type="hidden" th:value="${baseDepartment?.departmentId}" />
+			
+			<div class="layui-form-item">
+				<label class="layui-form-label">部门PID</label>
+				<div class="layui-input-inline ping-erp-edit-input-div-lastinput">
+					<input name="departmentPid" type="text" class="layui-input" placeholder="部门PID" th:value="${baseDepartment?.departmentPid}" autocomplete="off" lay-verify="required|length32" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">部门名称</label>
+				<div class="layui-input-inline ping-erp-edit-input-div-lastinput">
+					<input name="departmentName" type="text" class="layui-input" placeholder="部门名称" th:value="${baseDepartment?.departmentName}" autocomplete="off" lay-verify="required|length20" />
+				</div>
+			</div>
+			
+			<div class="layui-form-item ping-erp-edit-button-div">
+				<button type="button" class="layui-btn" id="personnel-baseDepartment-edit-btn-1" lay-filter="personnel-baseDepartment-edit-btn-1" lay-submit="">保存</button>
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+</head>
+<body>
+
+	<div class="layui-fluid ping-erp-edit-content-div">
+		<form class="layui-form layui-form-pane" action="">
+			<input name="menuId" type="hidden" th:value="${baseMenu?.menuId}" />
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">菜单名称</label>
+				<div class="layui-input-inline">
+					<input name="menuName" type="text" class="layui-input" placeholder="菜单名称" th:value="${baseMenu?.menuName}" autocomplete="off" lay-verify="required|length20" />
+				</div>
+				<label class="layui-form-label">排序编号</label>
+				<div class="layui-input-inline ping-erp-edit-input-div-lastinput">
+					<input name="orderNumber" type="text" class="layui-input" placeholder="排序编号" th:value="${baseMenu?.orderNumber}?${baseMenu?.orderNumber}:1" autocomplete="off" lay-verify="required|intType" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">菜单类型</label>
+				<div class="layui-input-inline">
+					<select name="menuType.codeId">
+						<option th:each="data:${typeList}" th:value="${data.codeId}" th:text="${data.codeValue}" th:selected="${data.codeId==baseMenu?.menuType?.codeId}?'selected'"></option>
+					</select>
+				</div>
+				<label class="layui-form-label">打开方式</label>
+				<div class="layui-input-inline ping-erp-edit-input-div-lastinput">
+					<select name="menuTarget.codeId">
+						<option th:each="data:${targetList}" th:value="${data.codeId}" th:text="${data.codeValue}" th:selected="${data.codeId==baseMenu?.menuTarget?.codeId}?'selected'"></option>
+					</select>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">菜单PID</label>
+				<div class="layui-input-inline ping-erp-edit-input-div-mediuminput ping-erp-edit-input-div-lastinput">
+					<input name="menuPid" type="text" class="layui-input" placeholder="菜单PID" th:value="${baseMenu?.menuPid}" autocomplete="off" lay-verify="required|length32|menu" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">菜单链接</label>
+				<div class="layui-input-inline ping-erp-edit-input-div-mediuminput ping-erp-edit-input-div-lastinput">
+					<input name="menuHref" type="text" class="layui-input" placeholder="菜单链接" th:value="${baseMenu?.menuHref}" autocomplete="off" lay-verify="length100" />
+				</div>
+			</div>
+
+			<div class="layui-form-item ping-erp-edit-button-div">
+				<button type="button" class="layui-btn" id="system-baseMenu-treeEdit-btn-1" lay-filter="system-baseMenu-treeEdit-btn-1" lay-submit="">保存</button>
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>

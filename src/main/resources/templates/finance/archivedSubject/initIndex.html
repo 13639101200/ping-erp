@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=devic-width, initial-scale=1, maximum-scale=1" />
+</head>
+<body>
+
+	<div class="ping-erp-index-content-div">
+		<div class="layui-btn-group">
+			<button id="finance-archivedSubject-initIndex-btn-1" class="layui-btn layui-btn-disabled ping-erp-btn-group-first-btn-disabled" disabled="disabled">增加</button>
+			<button id="finance-archivedSubject-initIndex-btn-2" class="layui-btn layui-btn-disabled" disabled="disabled">编辑</button>
+			<button id="finance-archivedSubject-initIndex-btn-3" class="layui-btn layui-btn-disabled" disabled="disabled">删除</button>
+		</div>
+
+		<div class="layui-inline">
+			<input id="finance-archivedSubject-initIndex-key-1" type="text" class="layui-input" placeholder="代码丨名称丨类别丨方向" autocomplete="off" />
+		</div>
+		<button id="finance-archivedSubject-initIndex-btn-4" class="layui-btn">搜索</button>
+
+		<div class="layui-btn-group">
+			<button id="finance-archivedSubject-initIndex-btn-5" class="layui-btn layui-btn-disabled ping-erp-btn-group-first-btn-disabled" disabled="disabled">导入</button>
+			<button id="finance-archivedSubject-initIndex-btn-6" class="layui-btn layui-btn-disabled" disabled="disabled">启用</button>
+		</div>
+
+		<table id="finance-archivedSubject-initIndex-table-1" lay-filter="finance-archivedSubject-initIndex-table-1"></table>
+	</div>
+
+	<script th:src="@{/js/finance/archivedSubject/initIndex.js}"></script>
+
+</body>
+</html>

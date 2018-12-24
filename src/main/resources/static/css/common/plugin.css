@@ -1,0 +1,55 @@
+.layui-table {
+	margin-bottom: 0;
+}
+
+.layui-table-view {
+	margin-bottom: 0;
+}
+
+.layui-form-checkbox {
+	margin: 4px 10px 4px 0 !important;
+}
+
+.layui-unselect dl {
+	max-height: 120px;
+}
+
+.layui-anim-upbit dl {
+	max-height: 120px;
+}
+
+.layui-table-cell {
+	height: inherit;
+}
+
+.select2-container {
+	width: 100% !important;
+}
+
+.select2-selection {
+	height: 38px !important;
+	border-color: #e6e6e6 !important;
+	border-radius: 0 2px 2px 0 !important;
+}
+
+.select2-selection:hover {
+	border-color: #D2D2D2 !important;
+}
+
+.select2-selection__rendered {
+	height: 28px !important;
+	padding: 4px 10px !important;
+}
+
+.select2-selection__arrow {
+	padding-top: 8px !important;
+}
+
+.select2-dropdown {
+	z-index: 20000000;
+	border-color: #D2D2D2 !important;
+}
+
+.select2-search__field {
+	border-color: #D2D2D2 !important;
+}

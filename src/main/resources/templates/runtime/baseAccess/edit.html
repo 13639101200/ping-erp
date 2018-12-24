@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+</head>
+<body>
+
+	<div class="layui-fluid ping-erp-edit-content-div">
+		<form class="layui-form layui-form-pane" action="">
+			<input name="accessId" type="hidden" th:value="${baseAccess?.accessId}" />
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">访问用户ID</label>
+				<div class="layui-input-inline ping-erp-edit-input-div-lastinput">
+					<input name="user.userId" type="text" class="layui-input" placeholder="访问用户ID" th:value="${baseAccess?.user?.userId}" autocomplete="off" lay-verify="length32" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">客户端地址</label>
+				<div class="layui-input-inline ping-erp-edit-input-div-lastinput">
+					<input name="clientIp" type="text" class="layui-input" placeholder="客户端地址" th:value="${baseAccess?.clientIp}" autocomplete="off" lay-verify="required|length15" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">服务器资源</label>
+				<div class="layui-input-inline ping-erp-edit-input-div-lastinput">
+					<input name="serverUrl" type="text" class="layui-input" placeholder="服务器资源" th:value="${baseAccess?.serverUrl}" autocomplete="off" lay-verify="required|length100" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">访问次数</label>
+				<div class="layui-input-inline ping-erp-edit-input-div-lastinput">
+					<input name="accessTotal" type="text" class="layui-input" placeholder="累计访问次数" th:value="${baseAccess?.accessTotal}" autocomplete="off" lay-verify="required|intType" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">最后时间</label>
+				<div class="layui-input-inline ping-erp-edit-input-div-lastinput">
+					<input id="runtime-baseAccess-edit-input-1" name="lastTime" type="text" class="layui-input" placeholder="最后访问时间" th:value="${baseAccess?.lastTime}?${#dates.format(baseAccess.lastTime,'yyyy-MM-dd HH:mm:ss')}:''" autocomplete="off" lay-verify="required" readonly="readonly" />
+				</div>
+			</div>
+
+			<div class="layui-form-item ping-erp-edit-button-div">
+				<button type="button" class="layui-btn" id="runtime-baseAccess-edit-btn-1" lay-filter="runtime-baseAccess-edit-btn-1" lay-submit="">保存</button>
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+</head>
+<body>
+
+	<div class="layui-fluid ping-erp-edit-content-div">
+		<form class="layui-form layui-form-pane" action="" lay-filter="finance-archivedSubject-edit-form-1">
+			<input name="subjectId" type="hidden" th:value="${archivedSubject?.subjectId}" /> <input name="subjectMoney" type="hidden" th:value="${archivedSubject?.subjectMoney}" /> <input name="assistAmount" type="hidden" th:value="${archivedSubject?.assistAmount}" /> <input id="finance-archivedSubject-edit-param-1" type="hidden" th:value="${archivedSubject?.assistAccount}" />
+			<div class="layui-form-item">
+				<label class="layui-form-label">科目代码</label>
+				<div class="layui-input-inline">
+					<input name="subjectCode" type="text" class="layui-input" placeholder="科目代码" th:value="${archivedSubject?.subjectCode}" autocomplete="off" lay-verify="required|length20" />
+				</div>
+				<label class="layui-form-label">科目名称</label>
+				<div class="layui-input-inline ping-erp-edit-input-div-lastinput">
+					<input name="subjectName" type="text" class="layui-input" placeholder="科目名称" th:value="${archivedSubject?.subjectName}" autocomplete="off" lay-verify="required|length20" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">科目类别</label>
+				<div class="layui-input-inline">
+					<select name="subjectType.codeId">
+						<option th:each="data:${typeList}" th:value="${data.codeId}" th:text="${data.codeValue}" th:selected="${data.codeId==archivedSubject?.subjectType?.codeId}?'selected'"></option>
+					</select>
+				</div>
+				<label class="layui-form-label">科目方向</label>
+				<div class="layui-input-inline ping-erp-edit-input-div-lastinput">
+					<select id="finance-archivedSubject-edit-input-1" name="subjectDirection.codeId">
+						<option th:each="data:${directionList}" th:value="${data.codeId}" th:text="${data.codeValue}" th:selected="${data.codeId==archivedSubject?.subjectDirection?.codeId}?'selected'"></option>
+					</select>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">辅计单位</label>
+				<div class="layui-input-inline">
+					<select id="finance-archivedSubject-edit-input-2" name="assistUnit.unitId">
+						<option value="null">无</option>
+						<option th:each="data:${unitList}" th:value="${data.unitId}" th:text="${data.unitName}" th:selected="${data.unitId==archivedSubject?.assistUnit?.unitId}?'selected'"></option>
+					</select>
+				</div>
+			</div>
+			<fieldset class="layui-elem-field layui-field-title">
+				<legend>
+					<a>辅助核算</a>
+				</legend>
+			</fieldset>
+			<div class="layui-form-item">
+				<div class="layui-input-inline ping-erp-edit-input-div-biggestinput">
+					<input type="checkbox" name="assistDepartment" title="部门辅助核算" /> <input type="checkbox" name="assistClerk" title="个人辅助核算" /> <input type="checkbox" name="assistCustomer" title="客户辅助核算" /> <input type="checkbox" name="assistSupplier" title="供应商辅助核算" /> <input type="checkbox" name="assistProject" title="项目辅助核算" />
+				</div>
+			</div>
+
+			<div class="layui-form-item ping-erp-edit-button-div">
+				<button type="button" class="layui-btn" id="finance-archivedSubject-edit-btn-1" lay-filter="finance-archivedSubject-edit-btn-1" lay-submit="">保存</button>
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>

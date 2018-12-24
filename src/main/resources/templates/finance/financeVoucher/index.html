@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=devic-width, initial-scale=1, maximum-scale=1" />
+</head>
+<body>
+
+	<div class="ping-erp-index-content-div">
+		<div class="layui-btn-group">
+			<button id="finance-financeVoucher-index-btn-1" class="layui-btn">增加</button>
+			<button id="finance-financeVoucher-index-btn-2" class="layui-btn">编辑</button>
+			<button id="finance-financeVoucher-index-btn-3" class="layui-btn">删除</button>
+		</div>
+
+		<div class="layui-inline">
+			<input id="finance-financeVoucher-index-key-1" type="text" class="layui-input" placeholder="凭证号" autocomplete="off" />
+		</div>
+		<button id="finance-financeVoucher-index-btn-4" class="layui-btn">搜索</button>
+
+		<div class="layui-btn-group">
+			<button id="finance-financeVoucher-index-btn-5" class="layui-btn">明细</button>
+			<button id="finance-financeVoucher-index-btn-6" sec:authorize="hasAnyAuthority('04B9D7C7325741508C3ED1ACCB51AE19')" class="layui-btn">签字</button>
+			<button id="finance-financeVoucher-index-btn-7" class="layui-btn">审核</button>
+			<button id="finance-financeVoucher-index-btn-8" class="layui-btn">记账</button>
+		</div>
+
+		<table id="finance-financeVoucher-index-table-1" lay-filter="finance-financeVoucher-index-table-1"></table>
+	</div>
+
+	<script th:src="@{/js/finance/financeVoucher/index.js}"></script>
+
+</body>
+</html>

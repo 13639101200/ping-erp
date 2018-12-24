@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+</head>
+<body>
+
+	<div class="layui-fluid ping-erp-edit-content-div">
+		<form class="layui-form layui-form-pane" action="">
+			<input name="codeId" type="hidden" th:value="${baseCode?.codeId}" />
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">类型代码</label>
+				<div class="layui-input-inline ping-erp-edit-input-div-lastinput">
+					<input name="typeCode" type="text" class="layui-input" placeholder="类型代码" th:value="${baseCode?.typeCode}" autocomplete="off" lay-verify="required|length50" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">编码类型</label>
+				<div class="layui-input-inline ping-erp-edit-input-div-lastinput">
+					<input name="codeType" type="text" class="layui-input" placeholder="编码类型" th:value="${baseCode?.codeType}" autocomplete="off" lay-verify="required|length20" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">编码码值</label>
+				<div class="layui-input-inline ping-erp-edit-input-div-lastinput">
+					<input name="codeValue" type="text" class="layui-input" placeholder="编码码值" th:value="${baseCode?.codeValue}" autocomplete="off" lay-verify="required|length20" />
+				</div>
+			</div>
+
+			<div class="layui-form-item ping-erp-edit-button-div">
+				<button type="button" class="layui-btn" id="system-baseCode-edit-btn-1" lay-filter="system-baseCode-edit-btn-1" lay-submit="">保存</button>
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>

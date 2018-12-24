@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" th:href="@{/css/system/baseMenu/treeIndex.css}" />
+</head>
+<body>
+
+	<div class="layui-fluid ping-erp-index-content-div">
+		<div class="layui-row">
+
+			<div class="layui-col-sm12">
+				<div class="layui-btn-group">
+					<button id="system-baseMenu-treeIndex-btn-1" class="layui-btn">增加同级</button>
+					<button id="system-baseMenu-treeIndex-btn-2" class="layui-btn">增加下级</button>
+					<button id="system-baseMenu-treeIndex-btn-3" class="layui-btn">编辑</button>
+					<button id="system-baseMenu-treeIndex-btn-4" class="layui-btn">删除</button>
+				</div>
+			</div>
+
+			<div class="layui-col-sm4">
+				<ul id="system-baseMenu-treeIndex-tree-1" class="ztree"></ul>
+			</div>
+
+			<div class="layui-col-sm8 system-baseMenu-treeIndex-detail">
+				<form lay-filter="system-baseMenu-treeIndex-form-1" class="layui-form layui-form-pane" action="">
+					<div class="layui-form-item system-baseMenu-treeIndex-item">
+						<label class="layui-form-label">菜单名称</label>
+						<div class="layui-input-inline">
+							<input name="menuName" type="text" class="layui-input" readonly="readonly" />
+						</div>
+						<label class="layui-form-label">排序编号</label>
+						<div class="layui-input-inline">
+							<input name="orderNumber" type="text" class="layui-input" readonly="readonly" />
+						</div>
+					</div>
+					<div class="layui-form-item system-baseMenu-treeIndex-item">
+						<label class="layui-form-label">菜单类型</label>
+						<div class="layui-input-inline">
+							<input name="menuType" type="text" class="layui-input" readonly="readonly" />
+						</div>
+						<label class="layui-form-label">打开方式</label>
+						<div class="layui-input-inline">
+							<input name="menuTarget" type="text" class="layui-input" readonly="readonly" />
+						</div>
+					</div>
+					<div class="layui-form-item system-baseMenu-treeIndex-item">
+						<label class="layui-form-label">菜单ID</label>
+						<div class="layui-input-inline ping-erp-edit-input-div-mediuminput">
+							<input name="menuId" type="text" class="layui-input" readonly="readonly" />
+						</div>
+					</div>
+					<div class="layui-form-item system-baseMenu-treeIndex-item">
+						<label class="layui-form-label">菜单PID</label>
+						<div class="layui-input-inline ping-erp-edit-input-div-mediuminput">
+							<input name="menuPid" type="text" class="layui-input" readonly="readonly" />
+						</div>
+					</div>
+					<div class="layui-form-item system-baseMenu-treeIndex-item">
+						<label class="layui-form-label">菜单链接</label>
+						<div class="layui-input-inline ping-erp-edit-input-div-mediuminput">
+							<input name="menuHref" type="text" class="layui-input" readonly="readonly" />
+						</div>
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+
+	<script th:src="@{/js/system/baseMenu/treeIndex.js}"></script>
+</body>
+</html>

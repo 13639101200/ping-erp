@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+</head>
+<body>
+
+	<div class="layui-fluid ping-erp-edit-content-div">
+		<form class="layui-form layui-form-pane" action="">
+			<input name="projectId" type="hidden" th:value="${baseProject?.projectId}" />
+			
+			<div class="layui-form-item">
+				<label class="layui-form-label">项目PID</label>
+				<div class="layui-input-inline ping-erp-edit-input-div-lastinput">
+					<input name="projectPid" type="text" class="layui-input" placeholder="项目PID" th:value="${baseProject?.projectPid}" autocomplete="off" lay-verify="required|length32" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">项目名称</label>
+				<div class="layui-input-inline ping-erp-edit-input-div-lastinput">
+					<input name="projectName" type="text" class="layui-input" placeholder="项目名称" th:value="${baseProject?.projectName}" autocomplete="off" lay-verify="required|length20" />
+				</div>
+			</div>
+			
+			<div class="layui-form-item ping-erp-edit-button-div">
+				<button type="button" class="layui-btn" id="project-baseProject-edit-btn-1" lay-filter="project-baseProject-edit-btn-1" lay-submit="">保存</button>
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>

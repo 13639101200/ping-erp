@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+</head>
+<body>
+
+	<div class="layui-fluid ping-erp-edit-content-div">
+		<form class="layui-form layui-form-pane" action="">
+			<input name="companyId" type="hidden" th:value="${baseCompany?.companyId}" />
+			
+			<div class="layui-form-item">
+				<label class="layui-form-label">公司名称</label>
+				<div class="layui-input-inline ping-erp-edit-input-div-lastinput">
+					<input name="companyName" type="text" class="layui-input" placeholder="公司名称" th:value="${baseCompany?.companyName}" autocomplete="off" lay-verify="required|length20" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">公司链接</label>
+				<div class="layui-input-inline ping-erp-edit-input-div-lastinput">
+					<input name="companyUrl" type="text" class="layui-input" placeholder="公司链接" th:value="${baseCompany?.companyUrl}" autocomplete="off" lay-verify="required|length20" />
+				</div>
+			</div>
+			
+			<div class="layui-form-item ping-erp-edit-button-div">
+				<button type="button" class="layui-btn" id="system-baseCompany-edit-btn-1" lay-filter="system-baseCompany-edit-btn-1" lay-submit="">保存</button>
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>

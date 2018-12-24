@@ -1,0 +1,23 @@
+-- 测试 --
+增加：编辑属性、属性验证、编辑框大小、成功增加
+查询：查询属性、查询排序、模糊匹配、公司限制
+编辑：成功编辑
+删除：成功删除
+
+
+
+
+-- TODO --
+intType、doubleType、intTypeZero、doubleTypeZero：需要重写
+com.ping.erp.web.system.BaseUserController.edit：公司属性需要分页
+com.ping.erp.web.system.BaseRoleController.edit：公司属性需要分页
+初始化：部门、职员、客户、供应商、项目需要优化,各框大小
+使用懒加载字段查询时懒加载失败（导致循环）
+com.ping.erp.system.menu.service.impl.findByTypeId懒加载触发
+
+-- 待完成 --
+6-12、14-16
+导入科目时可以浏览
+现金日记账、存款日记账、资金日报表
+总账、明细账、发生额、余额、多栏账
+辅助账查询

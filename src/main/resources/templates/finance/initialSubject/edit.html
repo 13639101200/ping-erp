@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+</head>
+<body>
+
+	<div class="layui-fluid ping-erp-edit-content-div">
+		<form class="layui-form layui-form-pane" action="">
+			<input name="subjectId" type="hidden" th:value="${initialSubject?.subjectId}" />
+			
+			<div class="layui-form-item">
+				<label class="layui-form-label">期间ID</label>
+				<div class="layui-input-inline">
+					<input name="periodId" type="text" class="layui-input" placeholder="期间ID" th:value="${initialSubject?.periodId}" autocomplete="off" lay-verify="required" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">科目代码</label>
+				<div class="layui-input-inline">
+					<input name="subjectCode" type="text" class="layui-input" placeholder="科目代码" th:value="${initialSubject?.subjectCode}" autocomplete="off" lay-verify="required" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">科目名称</label>
+				<div class="layui-input-inline">
+					<input name="subjectName" type="text" class="layui-input" placeholder="科目名称" th:value="${initialSubject?.subjectName}" autocomplete="off" lay-verify="required" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">科目类别</label>
+				<div class="layui-input-inline">
+					<input name="subjectType" type="text" class="layui-input" placeholder="科目类别" th:value="${initialSubject?.subjectType}" autocomplete="off" lay-verify="required" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">科目方向</label>
+				<div class="layui-input-inline">
+					<input name="subjectDirection" type="text" class="layui-input" placeholder="科目方向" th:value="${initialSubject?.subjectDirection}" autocomplete="off" lay-verify="required" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">科目金额</label>
+				<div class="layui-input-inline">
+					<input name="subjectMoney" type="text" class="layui-input" placeholder="科目金额" th:value="${initialSubject?.subjectMoney}" autocomplete="off" lay-verify="required" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">辅计单位</label>
+				<div class="layui-input-inline">
+					<input name="assistUnit" type="text" class="layui-input" placeholder="辅计单位" th:value="${initialSubject?.assistUnit}" autocomplete="off" lay-verify="required" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">辅计数量</label>
+				<div class="layui-input-inline">
+					<input name="assistAmount" type="text" class="layui-input" placeholder="辅计数量" th:value="${initialSubject?.assistAmount}" autocomplete="off" lay-verify="required" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">辅助核算：1、部门辅助；2、人员辅助；3、客户辅助；4、供应商辅助；5、项目辅助；</label>
+				<div class="layui-input-inline">
+					<input name="assistAccount" type="text" class="layui-input" placeholder="辅助核算：1、部门辅助；2、人员辅助；3、客户辅助；4、供应商辅助；5、项目辅助；" th:value="${initialSubject?.assistAccount}" autocomplete="off" lay-verify="required" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">创建时间</label>
+				<div class="layui-input-inline">
+					<input name="createTime" type="text" class="layui-input" placeholder="创建时间" th:value="${initialSubject?.createTime}" autocomplete="off" lay-verify="required" />
+				</div>
+			</div>
+			
+			<div class="layui-form-item ping-erp-edit-button-div">
+				<button type="button" class="layui-btn" id="finance-initialSubject-edit-btn-1" lay-filter="finance-initialSubject-edit-btn-1" lay-submit="">保存</button>
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+</head>
+<body>
+
+	<div class="layui-fluid ping-erp-edit-content-div">
+		<form class="layui-form layui-form-pane" action="">
+			<input name="detailId" type="hidden" th:value="${voucherDetail?.detailId}" />
+			
+			<div class="layui-form-item">
+				<label class="layui-form-label">凭证ID</label>
+				<div class="layui-input-inline">
+					<input name="voucherId" type="text" class="layui-input" placeholder="凭证ID" th:value="${voucherDetail?.voucherId}" autocomplete="off" lay-verify="required" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">科目ID</label>
+				<div class="layui-input-inline">
+					<input name="subjectId" type="text" class="layui-input" placeholder="科目ID" th:value="${voucherDetail?.subjectId}" autocomplete="off" lay-verify="required" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">摘要</label>
+				<div class="layui-input-inline">
+					<input name="detailAbstract" type="text" class="layui-input" placeholder="摘要" th:value="${voucherDetail?.detailAbstract}" autocomplete="off" lay-verify="required" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">借方金额</label>
+				<div class="layui-input-inline">
+					<input name="borrowerMoney" type="text" class="layui-input" placeholder="借方金额" th:value="${voucherDetail?.borrowerMoney}" autocomplete="off" lay-verify="required" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">贷方金额</label>
+				<div class="layui-input-inline">
+					<input name="lenderMoney" type="text" class="layui-input" placeholder="贷方金额" th:value="${voucherDetail?.lenderMoney}" autocomplete="off" lay-verify="required" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">辅助核算</label>
+				<div class="layui-input-inline">
+					<input name="assistAccount" type="text" class="layui-input" placeholder="辅助核算" th:value="${voucherDetail?.assistAccount}" autocomplete="off" lay-verify="required" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">辅助对象</label>
+				<div class="layui-input-inline">
+					<input name="assistObject" type="text" class="layui-input" placeholder="辅助对象" th:value="${voucherDetail?.assistObject}" autocomplete="off" lay-verify="required" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">创建时间</label>
+				<div class="layui-input-inline">
+					<input name="createTime" type="text" class="layui-input" placeholder="创建时间" th:value="${voucherDetail?.createTime}" autocomplete="off" lay-verify="required" />
+				</div>
+			</div>
+			
+			<div class="layui-form-item ping-erp-edit-button-div">
+				<button type="button" class="layui-btn" id="finance-voucherDetail-edit-btn-1" lay-filter="finance-voucherDetail-edit-btn-1" lay-submit="">保存</button>
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>
