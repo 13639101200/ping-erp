@@ -13,6 +13,7 @@ class StringUtilTest {
 
 	@Test
 	void testGetMD5() {
+
 	}
 
 }
