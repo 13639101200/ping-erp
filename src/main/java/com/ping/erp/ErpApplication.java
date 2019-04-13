@@ -7,6 +7,7 @@ import javax.annotation.PostConstruct;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.ping.erp.common.config.repository.factory.CoreRepositoryFactoryBean;
@@ -25,6 +26,7 @@ import com.ping.erp.common.config.repository.factory.CoreRepositoryFactoryBean;
 @SpringBootApplication
 @ServletComponentScan
 @EnableJpaRepositories(repositoryFactoryBeanClass = CoreRepositoryFactoryBean.class)
+@EnableCaching
 public class ErpApplication {
 
 	public static void main(String[] args) {
